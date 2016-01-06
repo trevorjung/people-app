@@ -1,0 +1,28 @@
+<div ng-app="app">
+  <div ng-controller="peopleCtrl" ng-init="setup()">
+    <div ng-repeat="person in people">
+      <!-- <button ng-click="toggle()">Hide user</button> -->
+      <ul>
+        <li ng-click="toggle(person)"> Name: {{person.name}} </li>
+        <li> Fun Fact: {{person.fun_fact}} </li>
+        <li ng-if="person.bioVisible"> Hometown: {{person.hometown}} </li>
+        <a href="#" ng-click="deletePerson($index)">Delete</a>
+      </ul>
+    
+    
+    
+    </div>
+  </div>
+</div>
+
+<div>
+  Name: <input ng-model="newName">
+</div>
+<br>
+<div>
+  Fun Fact: <textarea ng-model="newFunFact"></textarea>
+</div>
+<br>
+  <button ng-click="addPerson(newName, newFunFact)">Add Person</button>
+
+<!-- ng-if="person.bioVisible" if true it'll run if false it won't -->
